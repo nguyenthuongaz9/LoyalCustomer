@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/customer_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20px"
+        android:layout_marginBottom="20dp"
+        >
+
+        <Button
+            android:id="@+id/import_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IMPORT"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+
+
+        <Button
+            android:id="@+id/export_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPORT"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20px"
+        android:layout_marginBottom="20dp"
+        >
+
+        <Button
+            android:id="@+id/input_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INPUT"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+
+        <Button
+            android:id="@+id/use_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USE"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+
+        <Button
+            android:id="@+id/list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIST"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px" />
+    </LinearLayout>
+
+</LinearLayout>

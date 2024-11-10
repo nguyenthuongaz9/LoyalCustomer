@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#222222">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="USE POINT"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="#BBBBBB" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer's phone"
+        android:textColor="#BBBBBB"
+        android:textSize="18sp"
+        android:paddingTop="12dp" />
+
+    <EditText
+        android:id="@+id/numberPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textColor="#BBBBBB"
+        android:textColorHint="#BBBBBB"
+        android:backgroundTint="#BBBBBB"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current point"
+        android:textColor="#BBBBBB"
+
+        android:textSize="18sp"
+        android:paddingTop="12dp" />
+
+    <TextView
+        android:id="@+id/currentPoint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:textColor="#BBBBBB"
+        android:alpha="0.5"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Used point"
+        android:textColor="#BBBBBB"
+        android:textSize="18sp"
+        android:paddingTop="12dp" />
+
+    <EditText
+        android:id="@+id/new_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textColor="#BBBBBB"
+        android:textColorHint="#BBBBBB"
+        android:backgroundTint="#BBBBBB"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Note"
+        android:textColor="#BBBBBB"
+        android:textSize="18sp"
+        android:paddingTop="12dp" />
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:inputType="textMultiLine"
+        android:minLines="4"
+        android:maxLines="8"
+        android:gravity="top|start"
+        android:scrollbars="vertical"
+        android:textSize="18sp"
+        android:textColor="#BBBBBB"
+        android:textColorHint="#BBBBBB"
+        android:padding="10dp"
+        android:backgroundTint="#BBBBBB" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/save_and_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save and Next"
+            android:layout_marginLeft="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="LOGOUT"
+            android:layout_marginLeft="16dp" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        android:layout_marginBottom="20dp"
+        >
+
+        <Button
+            android:id="@+id/input_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="INPUT" />
+
+        <Button
+            android:id="@+id/use_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:text="USE" />
+
+
+        <Button
+            android:id="@+id/list_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:text="LIST" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

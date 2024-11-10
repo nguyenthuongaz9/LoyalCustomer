@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Customers>
+    <Customer>
+        <PhoneNumber>123456789</PhoneNumber>
+        <Point>150</Point>
+        <Note>VIP customer</Note>
+        <CreatedAt>2024-01-01 10:00:00</CreatedAt>
+        <UpdatedAt>2024-01-02 12:00:00</UpdatedAt>
+    </Customer>
+    <Customer>
+        <PhoneNumber>987654321</PhoneNumber>
+        <Point>100</Point>
+        <Note>Regular customer</Note>
+        <CreatedAt>2024-01-02 14:30:00</CreatedAt>
+        <UpdatedAt>2024-01-03 09:15:00</UpdatedAt>
+    </Customer>
+    <Customer>
+        <PhoneNumber>555555555</PhoneNumber>
+        <Point>200</Point>
+        <Note>Premium customer</Note>
+        <CreatedAt>2024-01-03 08:00:00</CreatedAt>
+        <UpdatedAt>2024-01-04 16:45:00</UpdatedAt>
+    </Customer>
+</Customers>
