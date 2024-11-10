@@ -108,7 +108,7 @@ public class CustomerService {
     }
 
 
-    public void exportToXml(Context context) {
+    public String exportToXml(Context context) {
         List<Customer> customers = customerRepository.getCustomers();
         XmlSerializer xmlSerializer = Xml.newSerializer();
         StringWriter writer = new StringWriter();
@@ -148,15 +148,12 @@ public class CustomerService {
             xmlSerializer.endTag("", "Customers");
             xmlSerializer.endDocument();
 
-
             File directory = new File(context.getFilesDir(), "customers_data");
             if (!directory.exists()) {
-                if (directory.mkdir()) {
-                    Log.d("CustomerService", "Directory created successfully.");
-                } else {
+                if (!directory.mkdir()) {
                     Log.d("CustomerService", "Failed to create directory.");
                     Toast.makeText(context, "Failed to create directory", Toast.LENGTH_SHORT).show();
-                    return;
+                    return null;
                 }
             }
 
@@ -167,10 +164,13 @@ public class CustomerService {
 
             Toast.makeText(context, "Exported to XML successfully!", Toast.LENGTH_SHORT).show();
 
+            return file.getAbsolutePath();
+
         } catch (IOException e) {
             e.printStackTrace();
             Log.d("CustomerService", "Error writing to file: " + e.getMessage());
             Toast.makeText(context, "Failed to export XML", Toast.LENGTH_SHORT).show();
+            return null;
         }
     }
 

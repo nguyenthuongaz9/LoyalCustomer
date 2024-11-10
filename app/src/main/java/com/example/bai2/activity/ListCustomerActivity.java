@@ -1,9 +1,11 @@
 package com.example.bai2.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.bai2.adapters.CustomerAdapter;
@@ -13,6 +15,7 @@ import com.example.bai2.models.User;
 import com.example.bai2.repository.UserRepository;
 import com.example.bai2.services.CustomerService;
 
+import java.io.File;
 import java.util.List;
 
 public class ListCustomerActivity extends AppCompatActivity {
@@ -65,8 +68,26 @@ public class ListCustomerActivity extends AppCompatActivity {
     }
 
     private void onClickExportButton(){
-        customerService.exportToXml(this);
+        String filePath = customerService.exportToXml(this);
+
+        if (filePath != null) {
+            File file = new File(filePath);
+            Uri uri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", file);
+
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setType("vnd.android.cursor.dir/email");
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"recipient@example.com"});
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Exported Customer Data");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Please find attached the exported XML file.");
+            emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+            emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+            if (emailIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(Intent.createChooser(emailIntent, "Choose an email client"));
+            }
+        }
     }
+
     private void onClickImportButton(){
         customerService.importFromXml(this);
         recreate();
